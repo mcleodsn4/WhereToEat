@@ -2,13 +2,35 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="style.css"></link> 
 <title>Where To Eat</title>
 </head>
 <body>
 
-<h1>Where to Eat?!</h1>
+<h1>Where to Eat?!</h1><br/>
+<h2>Helping you solve the every day problem of "where to eat?"</h2><br/>
 
-<button type="button">Random!</button>
+<h2>Click the Random button to pick a random restaurant near you.</h2>
+<button type="button">Random!</button> <br/><br/>
+
+<h2>Click the top 3 button to get top 3 random restaurants!</h2>
+<button type="button">Top 3!</button>
+
+<h3>Feel like filtering your options? Customize your options, click the filter button then click Random!</h3>
+
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Food Type</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#about">Chinese</a>
+    <a href="#base">Italian</a>
+    <a href="#blog">Asian (includes all)</a>
+    <a href="#contact">Indian</a>
+    <a href="#custom">Pizza</a>
+    <a href="#support">Fast-Food (Chick-fil-a, Wendys, etc.)</a>
+    <a href="#tools">Cafe (coffee, milkshakes, ice-cream, etc.)</a>
+  </div>
+</div>
+
 
 </body>
 </html>
