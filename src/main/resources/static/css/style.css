@@ -50,3 +50,15 @@ button:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+
+select {
+	font-size: 14px;
+	text-align: center;
+	padding: 15px 25px;
+	display: block;
+}
+
+input {
+	font-size: 14px;
+	display: inline-block;
+}
