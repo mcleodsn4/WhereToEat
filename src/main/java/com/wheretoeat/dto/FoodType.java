@@ -1,5 +1,10 @@
 package com.wheretoeat.dto;
 
+/**
+ * 
+ * @author lopezrjo
+ *Enum that will hold the food categories. Allows to also print the value not in upper case.
+ */
 public enum FoodType {
 	
 	ASIAN("Asian"),

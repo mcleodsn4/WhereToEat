@@ -1,5 +1,9 @@
 package com.wheretoeat.dto;
-
+/**
+ * Restaurant class DTO
+ * @author lopezrjo
+ *
+ */
 public class RestaurantDTO {
 
 	private String name;
