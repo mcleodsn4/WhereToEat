@@ -13,6 +13,5 @@ public class RestaurantServiceStub {
 		restaurantDTO.setFoodType(FoodType.ASIAN);
 		restaurantDTO.setHours("11AM-11PM");
 		return restaurantDTO;
-		
 	}
 }
