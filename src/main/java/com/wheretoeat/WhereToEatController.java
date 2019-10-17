@@ -12,10 +12,5 @@ public class WhereToEatController {
 	@RequestMapping("/start")
 	public String start() {
 		return "start";
-	}
-	public static void main(String... args) throws Exception {
-        SpringApplication.run(WheretoeatApplication.class, args);
-    }
-
-	
+	}	
 }
