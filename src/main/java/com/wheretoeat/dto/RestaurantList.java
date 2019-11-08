@@ -1,3 +1,4 @@
+
 package com.wheretoeat.dto;
 
 import java.util.List;

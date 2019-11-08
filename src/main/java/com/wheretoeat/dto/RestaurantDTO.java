@@ -1,3 +1,4 @@
+
 package com.wheretoeat.dto;
 /**
  * Restaurant class DTO

@@ -1,3 +1,4 @@
+
 package com.wheretoeat.service;
 
 import com.wheretoeat.dto.FoodType;
@@ -17,5 +18,4 @@ public interface IRestaurantService {
 	 * @return
 	 */
 	RestaurantDTO fetchRandomRestaurant();
-
 }
