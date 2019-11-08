@@ -1,3 +1,4 @@
+
 package com.wheretoeat.service;
 
 import com.wheretoeat.dto.FoodType;
@@ -43,3 +44,4 @@ public class RestaurantServiceStub implements IRestaurantService {
 		return restaurantDTO;
 	}
 }
+

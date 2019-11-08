@@ -12,7 +12,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @SpringBootApplication
 @Configuration
 @EnableWebMvc
-public class WheretoeatApplication extends WebMvcConfigurer {
+public class WheretoeatApplication implements WebMvcConfigurer {
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(WheretoeatApplication.class, args);
