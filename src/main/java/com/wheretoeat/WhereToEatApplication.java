@@ -12,11 +12,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @SpringBootApplication
 @Configuration
 @EnableWebMvc
-public class WheretoeatApplication implements WebMvcConfigurer {
+public class WhereToEatApplication implements WebMvcConfigurer {
 
 
 	public static void main(String[] args) {
-		SpringApplication.run(WheretoeatApplication.class, args);
+		SpringApplication.run(WhereToEatApplication.class, args);
 	}
 
     @Override
