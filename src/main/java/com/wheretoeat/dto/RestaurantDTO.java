@@ -1,10 +1,15 @@
 
 package com.wheretoeat.dto;
+
+import org.springframework.stereotype.Component;
+
 /**
  * Restaurant class DTO
  * @author lopezrjo
  *
  */
+
+@Component
 public class RestaurantDTO {
 
 	private String name;
