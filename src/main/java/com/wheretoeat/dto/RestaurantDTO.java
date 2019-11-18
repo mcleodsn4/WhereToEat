@@ -15,7 +15,7 @@ public class RestaurantDTO {
 	private String website;
 	private double rating;
 	private String priceScale;
-	private String bysyness;
+	private String busyness;
 	private double latitude;
 	private double longitude;
 	private FoodType foodType;
@@ -69,11 +69,11 @@ public class RestaurantDTO {
 	public void setPriceScale(String priceScale) {
 		this.priceScale = priceScale;
 	}
-	public String getBysyness() {
-		return bysyness;
+	public String getBusyness() {
+		return busyness;
 	}
-	public void setBysyness(String bysyness) {
-		this.bysyness = bysyness;
+	public void setBusyness(String busyness) {
+		this.busyness = busyness;
 	}
 	public double getLatitude() {
 		return latitude;
