@@ -10,11 +10,8 @@ import com.wheretoeat.dto.Option;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import org.springframework.boot.SpringApplication;
 
 @Controller
 public class WhereToEatController {

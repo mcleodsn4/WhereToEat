@@ -35,7 +35,7 @@ public class RestaurantServiceStub implements IRestaurantService {
 	public RestaurantDTO fetchRandomRestaurant ( ) {
 		RestaurantDTO restaurantDTO = new RestaurantDTO();
 		restaurantDTO.setName("Conscious Kitchen");
-		restaurantDTO.setDescription("Confort Food. Small Plates. Quick bite.");
+		restaurantDTO.setDescription("Comfort Food. Small Plates. Quick Bite.");
 		restaurantDTO.setAddress("912 Vine St, Cincinnati, OH 45219");
 		restaurantDTO.setFoodType(FoodType.COMFORT);
 		restaurantDTO.setHours("11AM-10PM");
