@@ -17,8 +17,13 @@ import java.util.Map;
 import org.springframework.boot.SpringApplication;
 
 @Controller
-@SpringBootApplication
 public class WhereToEatController {
+
+	public static final String FOOD_ATTRIBUTE = "foodTypeOptions";
+	public static final String PRICE_ATTRIBUTE = "priceRangeOptions";
+	public static final String BUSY_RANGE_ATTRIBUTE = "busyRangeOptions";
+	public static final String RATING_ATTRIBUTE = "ratingOptions";
+	public static final String START_TEMPLATE = "start";
 
 	@RequestMapping(value="/start", method=RequestMethod.GET)
 	public ModelAndView start() {
@@ -60,11 +65,11 @@ public class WhereToEatController {
 		ratingOptions.add(new Option("4","4 Star +"));
 		
 		ModelAndView model = new ModelAndView();
-		model.setViewName("start");
-		model.addObject("foodTypeOptions", foodTypeOptions);
-		model.addObject("priceRangeOptions", priceRangeOptions);
-		model.addObject("busyRangeOptions", busyRangeOptions);
-		model.addObject("ratingOptions", ratingOptions);
+		model.setViewName(START_TEMPLATE);
+		model.addObject(FOOD_ATTRIBUTE, foodTypeOptions);
+		model.addObject(PRICE_ATTRIBUTE, priceRangeOptions);
+		model.addObject(BUSY_RANGE_ATTRIBUTE, busyRangeOptions);
+		model.addObject(RATING_ATTRIBUTE, ratingOptions);
 		return model;
 	}	
 }
