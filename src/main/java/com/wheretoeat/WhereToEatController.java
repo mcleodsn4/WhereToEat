@@ -4,8 +4,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.wheretoeat.dto.Option;
+import com.wheretoeat.dto.RestaurantDTO;
+import com.wheretoeat.dto.FoodType;
+import com.wheretoeat.service.IRestaurantService;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -18,6 +22,9 @@ import org.springframework.boot.SpringApplication;
 
 @Controller
 public class WhereToEatController {
+	
+	@Autowired
+	private IRestaurantService restaurantServiceStub;
 
 	public static final String FOOD_ATTRIBUTE = "foodTypeOptions";
 	public static final String PRICE_ATTRIBUTE = "priceRangeOptions";
@@ -72,5 +79,19 @@ public class WhereToEatController {
 		model.addObject(RATING_ATTRIBUTE, ratingOptions);
 		return model;
 	}	
+	
+	@RequestMapping(value="/Random", method=RequestMethod.GET)
+	public String getRestaurant(RestaurantDTO randomRest) throws Exception{
+		randomRest = restaurantServiceStub.fetchRandomRestaurant();
+		
+		return "start";
+	}
+	
+	@RequestMapping(value="/Type", method=RequestMethod.GET)
+	public String getTypeRestaurant(RestaurantDTO typeRest) throws Exception{
+		typeRest = restaurantServiceStub.fetchByFoodType(FoodType.ASIAN);
+		
+		return "start";
+	}
 }
 
