@@ -3,6 +3,7 @@ package com.wheretoeat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -80,11 +81,12 @@ public class WhereToEatController {
 		return model;
 	}	
 	
-	@RequestMapping(value="/Random", method=RequestMethod.GET)
-	public String getRestaurant(RestaurantDTO randomRest) throws Exception{
+	@RequestMapping(value="/random", produces="application/json; charset=UTF-8")
+	@ResponseBody
+	public RestaurantDTO getRestaurant(RestaurantDTO randomRest) throws Exception{
 		randomRest = restaurantServiceStub.fetchRandomRestaurant();
-		
-		return "start";
+	
+		return randomRest;
 	}
 	
 	@RequestMapping(value="/Type", method=RequestMethod.GET)

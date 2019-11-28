@@ -3,6 +3,10 @@ package com.wheretoeat.service;
 
 import com.wheretoeat.dto.FoodType;
 import com.wheretoeat.dto.RestaurantDTO;
+
+import java.awt.List;
+import java.util.ArrayList;
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import org.springframework.stereotype.Component;
 
@@ -20,6 +24,7 @@ public class RestaurantServiceStub implements IRestaurantService {
 	 */
 	@Override
 	public RestaurantDTO fetchByFoodType (FoodType type) {
+				
 		RestaurantDTO[] restaurantArray = new RestaurantDTO[4];
 		
 		RestaurantDTO restaurantAsian = new RestaurantDTO();
@@ -87,7 +92,9 @@ public class RestaurantServiceStub implements IRestaurantService {
 	 */
 	@Override
 	public RestaurantDTO fetchRandomRestaurant ( ) {
-		RestaurantDTO[] restaurantArray = new RestaurantDTO[4];
+		
+		ArrayList<RestaurantDTO> restaurantArray = new ArrayList<RestaurantDTO>(); 
+		
 		
 		RestaurantDTO restaurantAsian = new RestaurantDTO();
 		restaurantAsian.setName("Pho Lang Thang");
@@ -97,24 +104,31 @@ public class RestaurantServiceStub implements IRestaurantService {
 		restaurantAsian.setHours("11AM-11PM");
 		restaurantAsian.setRating(4.6);
 		restaurantAsian.setPriceScale("$");
+		restaurantArray.add(restaurantAsian);
+
 		
 		RestaurantDTO restaurantPizza = new RestaurantDTO();
-		restaurantAsian.setName("Mios");
-		restaurantAsian.setDescription("Cincinnati pizza spot with good food and a bearcat presence.");
-		restaurantAsian.setAddress("2634 Vine St, Cincinnati, OH 45219");
-		restaurantAsian.setFoodType(FoodType.PIZZA);
-		restaurantAsian.setHours("11AM-11PM");
-		restaurantAsian.setRating(4.8);
-		restaurantAsian.setPriceScale("$$");
+		restaurantPizza.setName("Mios");
+		restaurantPizza.setDescription("Cincinnati pizza spot with good food and a bearcat presence.");
+		restaurantPizza.setAddress("2634 Vine St, Cincinnati, OH 45219");
+		restaurantPizza.setFoodType(FoodType.PIZZA);
+		restaurantPizza.setHours("11AM-11PM");
+		restaurantPizza.setRating(4.8);
+		restaurantPizza.setPriceScale("$$");
+		restaurantArray.add(restaurantPizza);
+
+
 		
 		RestaurantDTO restaurantCafe = new RestaurantDTO();
-		restaurantAsian.setName("Panera");
-		restaurantAsian.setDescription("Paying too much money for too little food.");
-		restaurantAsian.setAddress("120 Calhoun St, Cincinnati, OH 45219");
-		restaurantAsian.setFoodType(FoodType.CAFE);
-		restaurantAsian.setHours("6AM-9PM");
-		restaurantAsian.setRating(2.3);
-		restaurantAsian.setPriceScale("$$");
+		restaurantCafe.setName("Panera");
+		restaurantCafe.setDescription("Paying too much money for too little food.");
+		restaurantCafe.setAddress("120 Calhoun St, Cincinnati, OH 45219");
+		restaurantCafe.setFoodType(FoodType.CAFE);
+		restaurantCafe.setHours("6AM-9PM");
+		restaurantCafe.setRating(2.3);
+		restaurantCafe.setPriceScale("$$");
+		restaurantArray.add(restaurantCafe);
+
 		
 		RestaurantDTO restaurantComfort = new RestaurantDTO();
 		restaurantComfort.setName("Conscious Kitchen");
@@ -124,15 +138,12 @@ public class RestaurantServiceStub implements IRestaurantService {
 		restaurantComfort.setHours("11AM-10PM");
 		restaurantComfort.setRating(4.5);
 		restaurantComfort.setPriceScale("$");
+		restaurantArray.add(restaurantComfort);
+
 		
-		restaurantArray[0] = restaurantAsian;
-		restaurantArray[1] = restaurantPizza;
-		restaurantArray[2] = restaurantCafe;
-		restaurantArray[3] = restaurantComfort;
-		
-		int randomNumber = ThreadLocalRandom.current().nextInt(0, 4);
-		
-		return restaurantArray[randomNumber];
+		Random r = new Random();
+		int randomNumber = r.nextInt(4);
+		return restaurantArray.get(randomNumber);
 	}
 }
 

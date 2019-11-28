@@ -47,7 +47,7 @@ body {
 .card {
   color: inherit;
   cursor: pointer;
-  min-height: 450px;
+  min-height: 350px;
   margin: 1rem;
   position: relative;
   border: none;
