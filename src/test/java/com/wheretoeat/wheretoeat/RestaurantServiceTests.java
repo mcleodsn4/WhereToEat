@@ -44,19 +44,33 @@ public class RestaurantServiceTests {
 		return restaurantDTO;
     }
 
+    /**
+	 * 
+	 * ensures both mock restaurants are instances of the restaurant DTO.
+	 */
     @Test
     public void shouldBeRestaurant() {
         assertThat(initRandomRestaurantDTO()).isExactlyInstanceOf(RestaurantDTO.class);
         assertThat(initTypeRestaurantDTO()).isExactlyInstanceOf(RestaurantDTO.class);
     }
 
+    
+    /**
+	 * 
+	 * ensures the stub restaurant pulled is an instance of restaurant DTO.
+	 */
     @Test
     public void shouldBeAbleToGetRestaurant() {
-        RestaurantDTO restaurant  = initRandomRestaurantDTO();
         RestaurantServiceStub stub = new RestaurantServiceStub();
-        assertEquals(restaurant.getName(), stub.fetchRandomRestaurant().getName());
+        assertThat(stub.fetchRandomRestaurant()).isExactlyInstanceOf(RestaurantDTO.class);
     }
 
+    
+    /**
+	 * 
+	 * Ensures when Asian is the parameter for fetchByFoodType, an Asian
+	 * restaurant is pulled.
+	 */
     @Test
     public void shouldBeAbletoGetFoodType() {
     	RestaurantDTO restaurant = initTypeRestaurantDTO();
