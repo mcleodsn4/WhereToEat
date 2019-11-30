@@ -9,9 +9,10 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
- 	<title>Where To Eat</title>
+ 	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>	<title>Where To Eat</title>
 </head>
 <body>
+
 <script>
         var x=document.getElementById("demo");
         function getLocation()
@@ -37,6 +38,8 @@
     	</div>		
   	</div>
  	<br>
+
+
 	<!-- OPTION -->
 	<div class="container-fluid p-4">
 	 	<div class="card-deck">
@@ -46,10 +49,13 @@
           			<p>OPTION I</p>        
         		</div>
         		<div class="back">
-         			<div>
+        		  	<div id = "randomSurprise">   </div>
+		          	
+         			<div id = "randomres">
 			            <p>We will give you a random suprise!</p>
-     					<button type="button" class="btn btn-success btn-lg btn-block">Random!</button>
+     					<button type="button" class="btn btn-success btn-lg btn-block" id = "randomResturant">Random!</button>
 		          	</div>
+		        
         		</div>
       		</a>	
       		<!-- OPTION 2 -->
@@ -103,5 +109,44 @@
       		</a>	 	 	
 	 	</div>	
 	</div>
+	
+	
+	
+	<script>
+	
+	$('#randomResturant').click(function(){
+			
+		document.getElementById('randomSurprise').innerHTML = "";
+			
+
+		$.getJSON('random', function(data){
+			$('randomSurprise').show()
+
+			$('#randomSurprise').append('Name:' + data.name +' <br>' +
+					'Description:' + data.description +' <br>' +
+					'Address:' + data.address +' <br>' +
+					'Food:' + data.foodType +' <br>' +
+					'Hours:' + data.hours +' <br>' +
+					'Rating:' + data.rating +' <br>' +
+					'Price Scale:' + data.priceScale +' <br>' 
+					)
+			
+			
+		})
+		
+	});
+	</script>
+	
+	
+	
+	
+	
+
+	
 </body>
 </html>
+
+
+
+
+

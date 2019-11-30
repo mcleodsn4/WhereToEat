@@ -1,6 +1,7 @@
 
 package com.wheretoeat.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,8 +11,7 @@ import java.util.List;
  */
 public class RestaurantList {
 
-	private List<RestaurantDTO> restaurants = null;
-
+	private List<RestaurantDTO> restaurants = new ArrayList<RestaurantDTO>();
 	public List<RestaurantDTO> getRestaurants() {
 		return restaurants;
 	}

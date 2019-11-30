@@ -10,7 +10,7 @@ public enum FoodType {
 	
 	ASIAN("Asian"),
 	CAFE("Cafe"),
-	COMFORT("Commfort Food"),
+	COMFORT("Comfort Food"),
 	CHINESE("Chinese"),
 	FASTFOOD("Fast-Food"),
 	INDIAN("Indian"),

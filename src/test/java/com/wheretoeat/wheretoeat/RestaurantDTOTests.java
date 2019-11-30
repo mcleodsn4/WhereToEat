@@ -13,6 +13,10 @@ import static org.junit.Assert.fail;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest()
+/**
+ * 
+ * Ensures that a mock restaurant matches the instances of restaurant DTO.
+ */
 public class RestaurantDTOTests {
 
     private String expectName = "MOCK NAME";
